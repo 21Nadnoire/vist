@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Sign Up</title>
+  <style>
+    *{
+      font-family: "Century Gothic", sans-serif;
+    }
+
+    body {
+      font-family: "Century Gothic", sans-serif;
+      background-color: white;
+    }
+
+    .container {
+      color: #2f1c6a;
+      background-color: #f4f5ff;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+      margin: 60px auto;
+      max-width: 550px;
+      padding: 50px;
+      text-align: center;
+    }
+
+    .inst{
+      text-align: center;
+      font-size: 12px;
+      margin-bottom: 50px;
+    }
+
+    h1 {
+      color: #2f1c6a;
+      font-size: 28px;
+      text-align: center;
+      font-family:"Century Gothic", sans-serif;;
+      margin: 0;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input, select {
+      border: 2px solid #2f1c6a;
+      border-radius: 5px;
+      margin: 0;
+      background: transparent;
+      font-size: 16px;
+      padding: 14px 18px;
+      font-family: "Century Gothic", sans-serif;
+      width: 50%;
+    }
+
+    option{
+      font-family: "Century Gothic", sans-serif;
+      width: 40%;
+      color: #2f1c6a;
+    }
+
+    button {
+      background-color: #2f1c6a;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 35%;
+      font-size: 18px;
+    }
+
+    button:hover {
+      background-color: #673de6;
+    }
+
+    .or {
+      width: 70%;
+      margin: .7em auto;
+      overflow: hidden;
+      text-align: center;
+      font-weight:300;
+      color: #fff;
+    }
+    .or:before, .or:after {
+      content: "";
+      display: inline-block;
+      width: 50%;
+      margin: 0 .5em 0 -55%;
+      vertical-align: middle;
+      border-bottom: 1px solid;
+    }
+    .or:after {
+      margin: 0 -55% 0 .5em;
+    }
+
+    input::-webkit-input-placeholder {
+      font-family: "Century Gothic", sans-serif;
+    }
+
+    input:-ms-input-placeholder {
+      font-family: "Century Gothic", sans-serif;
+    }
+
+    input:-moz-placeholder {
+      font-family: "Century Gothic", sans-serif;
+    }
+
+    input::-moz-placeholder {
+      font-family: "Century Gothic", sans-serif;
+    }
+  </style>
+</head>
+<body>
+<span style="font-size: 64px;  color: #2f1c6a; font-family:Algerian,serif; font-style: italic">&nbsp;&nbsp;ANZUZA</span>
+<div class="container">
+  <h1>Sign up</h1>
+
+  <span class="inst">Already have an account? <a th:href="@{/validate-phone}">Log In</a></span>
+  <br><br><br>
+  <form th:action="@{/user/create}" th:object="${user}" method="post" name="signup">
+
+    <input type="text" th:field="*{firstName}" name="firstname" placeholder="First Name" required>
+
+    <br><br>
+    <input type="text" th:field="*{lastName}" name="lastname" placeholder="Last Name" required>
+
+    <br><br>
+    <input type="text" th:field="*{address}" name="address" placeholder="Address" required>
+
+    <br><br>
+    <input type="email" th:field="*{email}" name="email" placeholder="Email" required>
+
+    <br><br>
+    <select th:field="*{country}" name="country" required onchange="updatePhonePrefix(this.value)">
+    <option value="">Select a country</option>
+      <option value="Rwanda">Rwanda</option>
+      <option value="Burundi">Burundi</option>
+      <option value="Kenya">Kenya</option>
+      <option value="DR Congo">DR Congo</option>
+      <option value="Tanzania">Tanzania</option>
+      <option value="South Sudan">South Sudan</option>
+      <option value="Nigeria">Nigeria</option>
+      <option value="Gabon">Gabon</option>
+      <option value="USA">United States</option>
+      <option value="UK">United Kingdom</option>
+      <option value="Mexico">Mexico</option>
+    </select>
+
+    <br><br>
+    <input type="tel" th:field="*{phoneNumber}" id="phone" name="phone" placeholder="Phone Number" required>
+
+    <br><br><br>
+    <button type="submit">Sign Up</button>
+
+  </form>
+</div>
+</body>
+
+<script>
+function updatePhonePrefix(country) {
+  const phoneInput = document.getElementById("phone");
+  let countryCode;
+
+  phoneInput.value = '';
+
+  switch(country) {
+    case "Rwanda":
+      countryCode = "+250";
+      break;
+    case "Burundi":
+      countryCode = "+257";
+      break;
+    case "Uganda":
+      countryCode = "+256";
+      break;
+    case "Tanzania":
+      countryCode = "+251";
+      break;
+    case "Kenya":
+      countryCode = "+254";
+      break;
+    case "DR Congo":
+      countryCode = "+243";
+      break;
+    case "South Sudan":
+      countryCode = "+211";
+      break;
+    case "Gabon":
+      countryCode = "+241";
+      break;
+    case "Nigeria":
+      countryCode = "+234";
+      break;
+    case "USA":
+      countryCode = "+1";
+      break;
+    case "UK":
+      countryCode = "+44";
+      break;
+    case "Mexico":
+      countryCode = "+52";
+      break;
+    default:
+      countryCode = "";
+  }
+
+  phoneInput.value = countryCode + phoneInput.value;
+}
+
+</script>
+
+</html>

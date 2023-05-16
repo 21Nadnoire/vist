@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ANZUZA</title>
+    <style>
+    *{
+        font-family: "Century Gothic", sans-serif;
+        list-style: none;
+    }
+
+    body {
+        background: #2f1c6a;
+
+    }
+
+    nav {
+        background-color: #f4f5ff;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        overflow: auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    ul li {
+        position: relative;
+        margin: 0 20px;
+        list-style: none;
+        display: inline-block;
+        padding: 14px;
+        font-size: 17px;
+    }
+
+    nav a {
+        color: #2f1c6a;
+        font-size: 18px;
+        text-transform: uppercase;
+        border: 1px solid transparent;
+        padding: 7px 10px;
+        border-radius: 3px;
+    }
+
+    nav a:hover{
+        color:#2f1c6a;
+        text-decoration: none;
+        border-bottom: 2px solid #2f1c6a;
+    }
+
+    .description{
+        background-color: #f4f5ff;
+        font-size: 25px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        margin: 100px auto;
+        max-width: 900px;
+        padding: 50px;
+        text-align: center;
+        color:#2f1c6a;
+    }
+
+    .aboutUs{
+        background-color: #f4f5ff;
+        font-size: 25px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        margin: 100px auto;
+        max-width: 600px;
+        padding: 50px;
+        text-align: center;
+        color: #2f1c6a;
+    }
+
+    a{
+        margin-right: 3px;
+        text-decoration: none;
+        color: #2f1c6a;
+    }
+
+    a:hover{
+        margin-right: 3px;
+        text-decoration: underline;
+        color: #2f1c6a;
+    }
+
+    button{
+        padding: 10px;
+        margin: 10px;
+        border-radius: 5px;
+        border: none;
+        background-color: #2f1c6a;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #673de6;
+    }
+    </style>
+</head>
+<body>
+    <nav>
+        <span style="font-size: 64px;  color: #2f1c6a; font-family:Algerian,serif; font-style: italic">&nbsp;&nbsp;ANZUZA</span>
+        <ul>
+            <li><a href="#about"><button>About Us</button></a></li>
+            <li><a th:href="@{/validate-phone}"><button>Log In</button></a></li>
+            <li><a th:href="@{/sign-up}"><button>Sign Up</button></a></li>
+        </ul>
+    </nav>
+    <br><br>
+
+    <div class="description">
+        <span style="font-size: 42px; color: #2f1c6a">"</span>
+        The Anzuza Management Software is designed to help users to register their visitors
+        and keep safe their town. This software allows users to create and maintain their
+        visitors details such as visitor number, first Name, last Name, visiting
+        date and more. The software also provides user management functionality to
+        allow users to register and log in securely to the platform.
+        <span style="font-size: 42px; color: #2f1c6a">"</span>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <a id="about"></a>
+    <div class="aboutUs">
+       What we do: <br><br>
+        This is a web app   <br>
+        to help to register visitors in our villages <br>
+        it is a policy here in Rwanda   <br>
+            <br>
+        enjoy live, keeping our village safe!!  <br>
+
+        <br>
+        <span style="text-align:center; font-size: 15px; color: #2f1c6a"><a th:href="@{/main-page}">BACK TO TOP</a></span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+body {
+    font-family: "Century Gothic", sans-serif;
+    background-color: #f6f7f7;
+}
+
+.container {
+
+    /*margin-left: 50%;*/
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin: 100px auto;
+    max-width: 550px;
+    padding: 50px;
+    text-align: center;
+}
+
+h3 {
+    color: black;
+    font-size: 15px;
+    text-align: left;
+    margin-left: 20px;
+}
+
+h1 {
+    color: black;
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-align: left;
+    margin-left: 20px;
+    text-decoration: underline;
+    /*border-bottom: 1px solid black;*/
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input, select {
+    border: 0;
+    border-bottom: 2px solid black;
+    margin: 0;
+    background: transparent;
+    font-size: 16px;
+    padding: 14px 18px;
+    font-family: "Century Gothic", sans-serif;
+    width: 40%;
+}
+
+option{
+    font-family: "Century Gothic", sans-serif;
+    width: 40%;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.or {
+    width: 70%;
+    margin: .7em auto;
+    overflow: hidden;
+    text-align: center;
+    font-weight:300;
+    color: #fff;
+}
+.or:before, .or:after {
+    content: "";
+    display: inline-block;
+    width: 50%;
+    margin: 0 .5em 0 -55%;
+    vertical-align: middle;
+    border-bottom: 1px solid;
+}
+.or:after {
+    margin: 0 -55% 0 .5em;
+}
+
+input::-webkit-input-placeholder {
+    font-family: "Century Gothic", sans-serif;
+}
+
+input:-ms-input-placeholder {
+    font-family: "Century Gothic", sans-serif;
+}
+
+input:-moz-placeholder {
+    font-family: "Century Gothic", sans-serif;
+}
+
+input::-moz-placeholder {
+    font-family: "Century Gothic", sans-serif;
+}

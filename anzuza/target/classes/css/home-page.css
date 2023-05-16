@@ -1,0 +1,58 @@
+body {
+    background-color: #f6f7f7;
+    font-family: "Century Gothic", sans-serif;
+}
+
+h1, h2, th {
+    color: black;
+    text-align: center;
+}
+
+.func{
+    text-align: center;
+    color: black;
+}
+
+.func a{
+    align-items: center;
+    color: black;
+    text-decoration: underline;
+
+}
+
+.func:hover{
+    color: black;
+    cursor: pointer;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 60%;
+    margin-top: 20px;
+    align-items: center;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Set alternating row color */
+}
+tr:hover {
+    background-color: #E6E6FA; /* Set hover row color */
+}
+a {
+    color: #4B0082;
+    text-decoration: none;
+}
+a:hover {
+    color: #9400D3;
+    text-decoration: underline;
+    cursor: pointer;
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Verify OTP</title>
+  <style>
+    body {
+      background-color: white;
+      font-family: "Century Gothic", sans-serif;
+    }
+    .container {
+      margin: auto;
+      margin-top: 100px;
+      padding: 20px;
+      background-color: #f4f5ff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      max-width: 500px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #2f1c6a;
+      font-size: 28px;
+      text-align: center;
+    }
+
+    .inst{
+      text-align: center;
+      font-size: 12px;
+      margin-bottom: 50px;
+    }
+
+    input {
+      border: 2px solid #2f1c6a;
+      border-radius: 5px;
+      margin: 0;
+      background: transparent;
+      font-size: 16px;
+      padding: 14px 18px;
+      width: 53%;
+    }
+
+    input[type="submit"] {
+      padding: 10px;
+      margin: 10px;
+      border-radius: 5px;
+      border: none;
+      background-color: #2f1c6a;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      width: 53%;
+    }
+    input[type="submit"]:hover {
+      background-color: #673de6;
+    }
+
+    .or {
+      width: 70%;
+      margin: .7em auto;
+      overflow: hidden;
+      text-align: center;
+      font-weight:300;
+      color: #2f1c6a;
+    }
+    .or:before, .or:after {
+      content: "";
+      display: inline-block;
+      width: 50%;
+      margin: 0 .5em 0 -55%;
+      vertical-align: middle;
+      border-bottom: 1px solid;
+    }
+    .or:after {
+      margin: 0 -55% 0 .5em;
+    }
+
+    a{
+      margin-right: 3px;
+      text-decoration: underline;
+      color: #2f1c6a;
+    }
+
+    a:hover{
+      margin-right: 3px;
+      text-decoration: underline;
+      color: #673de6;
+    }
+
+    input::-webkit-input-placeholder {
+      font-family: "Century Gothic", sans-serif;
+    }
+
+    input:-ms-input-placeholder {
+      font-family: "Century Gothic", sans-serif;
+    }
+
+    input:-moz-placeholder {
+      font-family: "Century Gothic", sans-serif;
+    }
+
+    input::-moz-placeholder {
+      font-family: "Century Gothic", sans-serif;
+    }
+
+  </style>
+</head>
+<body>
+<span style="font-size: 64px;  color: #2f1c6a; font-family:Algerian,serif; font-style: italic">&nbsp;&nbsp;ANZUZA</span>
+<div class="container">
+  <h1>Verify OTP</h1>
+  <br>
+  <form id="otp-form" th:object="${user}"th:action="@{/user/auth}" method="post" >
+    <input type="number" id="otp" name="otp" th:field="*{otp}"  placeholder="Enter the OTP sent to your phone" required>
+    <input type="hidden" id="phone-hidden" th:field="*{phoneNumber}" name="phone" value="">
+    <br>
+    <input type="submit" value="Login">
+  </form>
+</div>
+</body>
+</html>
